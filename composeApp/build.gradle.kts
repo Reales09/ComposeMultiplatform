@@ -36,11 +36,20 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(compose.runtime)
+            api(compose.foundation)
+            api(compose.animation)
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            // Navigation Precompose
+            api("moe.tlaster:precompose:1.5.10")
+            //ViewModel
+            api("moe.tlaster:precompose-viewmodel:1.5.10") // For ViewModel intergration
+        }
+        iosMain.dependencies {
+            //iOS dependencies
         }
     }
 }
