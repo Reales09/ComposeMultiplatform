@@ -93,4 +93,7 @@ android {
         compose = true
     }
 }
+dependencies {
+    implementation(libs.androidx.material3.android)
+}
 
