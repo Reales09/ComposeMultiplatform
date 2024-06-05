@@ -4,21 +4,25 @@ import domain.ExpenseRepository
 import model.Expense
 import model.ExpenseCategory
 
-class ExpenseRepoImpl : ExpenseRepository {
+class ExpenseRepoImpl(private val expenseManger: ExpenseManager) : ExpenseRepository {
     override fun getAllExpenses(): List<Expense> {
-        return ExpenseManager.fakeExpenseList
+        return expenseManger.fakeExpenseList
     }
 
     override fun addExpense(expense: Expense) {
-        ExpenseManager.addNewExpense(expense)
+        expenseManger.addNewExpense(expense)
     }
 
     override fun editExpense(expense: Expense) {
-        ExpenseManager.editExpense(expense)
+        expenseManger.editExpense(expense)
     }
 
     override fun getCategories(): List<ExpenseCategory> {
-        return ExpenseManager.getCategories()
+        return expenseManger.getCategories()
+    }
+
+    override fun deleteExpense(expense: Expense): List<Expense> {
+        TODO("Not yet implemented")
     }
 
 }
