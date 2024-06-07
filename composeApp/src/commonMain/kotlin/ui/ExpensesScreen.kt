@@ -87,7 +87,7 @@ fun AllExpensesHeader() {
     ) {
         Text(
             modifier = Modifier.weight(1f),
-            text = "All Expenses",
+            text = "All Expense",
             fontWeight = FontWeight.ExtraBold,
             fontSize = 20.sp,
             color = colors.textColor
