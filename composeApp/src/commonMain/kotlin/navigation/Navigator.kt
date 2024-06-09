@@ -42,7 +42,7 @@ fun Navigation(navigator: Navigator) {
 
             //Crear ExpensesDetailScreen
 
-            ExpensesDetailScreen(expenseToEdit = expenseToEditOrAdd){ expense ->
+            ExpensesDetailScreen(expenseToEdit = expenseToEditOrAdd, categoryList = viewModel.getCategories()){ expense ->
                 if(expenseToEditOrAdd == null){
                     viewModel.addExpense(expense)
                 }else{
