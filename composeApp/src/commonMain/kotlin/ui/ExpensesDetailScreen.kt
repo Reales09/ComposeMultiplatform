@@ -66,7 +66,7 @@ fun ExpensesDetailScreen(
     ModalBottomSheetLayout(
         sheetState = sheetState,
         sheetContent = {
-            CategoryBottomSheetContent(categoryList){
+            CategoryBottomSheetContent(categoryList) {
                 expenseCategory = it.name
                 categorySelected = it.name
                 scope.launch {
@@ -74,10 +74,9 @@ fun ExpensesDetailScreen(
                 }
             }
         }
-    ){
+    ) {
 
     }
-
 }
 
 @Composable
