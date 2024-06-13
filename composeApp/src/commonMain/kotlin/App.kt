@@ -26,15 +26,15 @@ import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator
 import navigation.Navigation
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.KoinContext
 import org.koin.core.context.KoinContext
 
 @Composable
 @Preview
 fun App() {
     PreComposeApp {
+        KoinContext {
             val colors = getColorsTheme()
-            SessionCache.configDevice = configDevice
-
             AppTheme {
                 val navigator = rememberNavigator()
                 val titleTopBar = getTitleTopAppBar(navigator)
@@ -103,7 +103,9 @@ fun App() {
                 }
             }
         }
+
     }
+}
 
 @Composable
 fun getTitleTopAppBar(navigator: Navigator): String {
