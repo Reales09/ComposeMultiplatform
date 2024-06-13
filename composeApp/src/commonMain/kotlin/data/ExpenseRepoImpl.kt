@@ -5,8 +5,12 @@ import domain.ExpenseRepository
 import model.Expense
 import model.ExpenseCategory
 
-class ExpenseRepoImpl(private val expenseManger: ExpenseManager) : ExpenseRepository {
+class ExpenseRepoImpl(
+    private val expenseManger: ExpenseManager,
+    private val appDatabase: AppDatabase
+) : ExpenseRepository {
 
+    private val queries = appDatabase.expensesDBQueries
     override fun getAllExpenses(): List<Expense> {
         return expenseManger.fakeExpenseList
     }

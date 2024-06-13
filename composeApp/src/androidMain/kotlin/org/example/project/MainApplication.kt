@@ -1,6 +1,8 @@
 package org.example.project
 
 import android.app.Application
+import com.expenseApp.db.AppDatabase
+import data.DataBaseDriverFactory
 import di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +17,7 @@ class MainApplication: Application() {
             androidContext(this@MainApplication)
             androidLogger()
             //modules()
-            modules(appModule())
+            modules(appModule(AppDatabase.invoke(DataBaseDriverFactory(this@MainApplication).createDriver())))
 
         }
     }
