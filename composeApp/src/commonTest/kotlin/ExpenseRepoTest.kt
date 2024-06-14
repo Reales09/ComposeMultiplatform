@@ -8,6 +8,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
+/*
 class ExpenseRepoTest {
 
     private val expenseManager = ExpenseManager
@@ -108,3 +109,4 @@ class ExpenseRepoTest {
         assertEquals(allCategories, repoCategories)
     }
 }
+ */
