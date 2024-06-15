@@ -69,7 +69,6 @@ object ExpenseManager {
 
         fakeExpenseList.removeAt(index)
     }
-
     fun getCategories(): List<ExpenseCategory> {
         return listOf(
             ExpenseCategory.GROCERIES,
